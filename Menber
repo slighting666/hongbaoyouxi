@@ -1,0 +1,21 @@
+package hongbaoyouxi;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Menber extends User {
+    public Menber() {
+    }
+
+    public Menber(String name, int money) {
+        super(name, money);
+    }
+    public void get(ArrayList<Integer> list){
+        int money1 = super.getMoney();
+        Random random = new Random();
+        int a = random.nextInt(list.size());
+        int getmoney1 = list.remove(a);
+        int totalmoney =money1+getmoney1;
+        super.setMoney(totalmoney);
+    }
+}
