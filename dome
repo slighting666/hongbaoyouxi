@@ -1,0 +1,24 @@
+package hongbaoyouxi;
+
+import java.util.ArrayList;
+
+public class dome {
+    public static void main(String[] args) {
+        Manage manage = new Manage("群主",200);
+        Menber menberA = new Menber("成员A",0);
+        Menber menberB = new Menber("成员B",0);
+        Menber menberC = new Menber("成员C",0);
+        manage.show();
+        menberA.show();
+        menberB.show();
+        menberC.show();
+        ArrayList<Integer> list =manage.send(50,3);
+        menberA.get(list);
+        menberB.get(list);
+        menberC.get(list);
+        manage.show();
+        menberA.show();
+        menberB.show();
+        menberC.show();
+    }
+}
