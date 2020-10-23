@@ -1,0 +1,29 @@
+package hongbaoyouxi;
+
+import java.util.ArrayList;
+
+public class Manage extends User {
+    public Manage(String name, int money) {
+        super(name, money);
+    }
+
+    public Manage() {
+    }
+    public ArrayList<Integer> send(int sendmoney ,int count){
+         int totalmoney = super.getMoney();
+         ArrayList<Integer> list =new ArrayList<>();
+          if(sendmoney>totalmoney){
+              System.out.println("余额不足");
+              return list;
+          }
+          int leftmoney = totalmoney-sendmoney;
+          super.setMoney(leftmoney);
+          int avg = sendmoney/count;
+          int left = sendmoney%count;
+          for (int i = 0; i < count-1; i++) {
+              list.add(avg);
+          }
+          list.add(avg+left);
+          return list;
+    }
+}
